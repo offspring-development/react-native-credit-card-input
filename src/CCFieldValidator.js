@@ -28,6 +28,7 @@ export default class CCFieldValidator {
       cvc: toStatus(cvcValidation),
       name: !!formValues.name ? "valid" : "incomplete",
       postalCode: this._validatePostalCode(formValues.postalCode),
+      address: !!formValues.name ? "valid" : "incomplete",
     }, this._displayedFields);
 
     return {
