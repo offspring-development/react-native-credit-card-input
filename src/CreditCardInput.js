@@ -31,6 +31,15 @@ const s = StyleSheet.create({
   input: {
     height: 40,
   },
+  validateErrorMessage: {
+    marginTop: 5,
+    marginBottom: 0,
+    textAlign: "left", 
+    color: "red", 
+    fontSize: 10,
+    marginLeft: 20,
+    marginRight: 20,
+  }
 });
 
 const CVC_INPUT_WIDTH = 70;
@@ -148,8 +157,16 @@ export default class CreditCardInput extends Component {
       values: { number, expiry, cvc, name, type }, focused,
       allowScroll, requiresName, requiresCVC, requiresPostalCode, 
       requiresAddress, cardScale, cardFontFamily, cardBrandIcons,
+      validateInfo
     } = this.props;
-
+    let valid = true
+    let messageInvalid = null
+    let orderInvalid = null
+    if (validateInfo) {
+      valid = validateInfo.valid
+      messageInvalid = validateInfo.message
+      orderInvalid = validateInfo.orderInvalid
+    }
     return (
       <View style={s.container}>
         <CreditCard focused={focused}
@@ -173,24 +190,54 @@ export default class CreditCardInput extends Component {
           <CCInput {...this._inputProps("number")}
             keyboardType="numeric"
             containerStyle={[s.inputContainer, inputContainerStyle, { width: CARD_NUMBER_INPUT_WIDTH }]} />
+            {(!valid && 
+                messageInvalid !== undefined && 
+                orderInvalid === 0) ? 
+                (<Text style={[styles.validateErrorMessage, {marginTop: 12, marginRight: 10, marginLeft: 10}]}>*{messageInvalid}</Text>) 
+              : null}
           <CCInput {...this._inputProps("expiry")}
             keyboardType="numeric"
             containerStyle={[s.inputContainer, inputContainerStyle, { width: EXPIRY_INPUT_WIDTH }]} />
+            {(!valid && 
+                messageInvalid !== undefined && 
+                orderInvalid === 1) ? 
+                (<Text style={[styles.validateErrorMessage, {marginTop: 12, marginRight: 10, marginLeft: 10}]}>*{messageInvalid}</Text>) 
+              : null}
           { requiresCVC &&
             <CCInput {...this._inputProps("cvc")}
               keyboardType="numeric"
               containerStyle={[s.inputContainer, inputContainerStyle, { width: CVC_INPUT_WIDTH }]} /> }
+              {(!valid && 
+                messageInvalid !== undefined && 
+                orderInvalid === 2) ? 
+                (<Text style={[styles.validateErrorMessage, {marginTop: 12, marginRight: 10, marginLeft: 10}]}>*{messageInvalid}</Text>) 
+              : null}
           { requiresName &&
             <CCInput {...this._inputProps("name")}
               containerStyle={[s.inputContainer, inputContainerStyle, { width: NAME_INPUT_WIDTH }]} /> }
+              {(!valid && 
+                messageInvalid !== undefined && 
+                orderInvalid === 3) ? 
+                (<Text style={[styles.validateErrorMessage, {marginTop: 12, marginRight: 10, marginLeft: 10}]}>*{messageInvalid}</Text>) 
+              : null}
           { requiresPostalCode &&
             <CCInput {...this._inputProps("postalCode")}
               keyboardType="numeric"
               containerStyle={[s.inputContainer, inputContainerStyle, { width: POSTAL_CODE_INPUT_WIDTH }]} /> }
+              {(!valid && 
+                messageInvalid !== undefined && 
+                orderInvalid === 4) ? 
+                (<Text style={[styles.validateErrorMessage, {marginTop: 12, marginRight: 10, marginLeft: 10}]}>*{messageInvalid}</Text>) 
+              : null}
           { requiresAddress &&
             <CCInput {...this._inputProps("address")}
               keyboardType="default"
               containerStyle={[s.inputContainer, inputContainerStyle, { width: ADDRESS_INPUT_WIDTH }]} /> }
+              {(!valid && 
+                messageInvalid !== undefined && 
+                orderInvalid === 5) ? 
+                (<Text style={[styles.validateErrorMessage, {marginTop: 12, marginRight: 10, marginLeft: 10}]}>*{messageInvalid}</Text>) 
+              : null}
           </View>
         </ScrollView>
       </View>
