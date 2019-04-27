@@ -15,7 +15,7 @@ export const InjectedProps = {
   requiresName: PropTypes.bool,
   requiresCVC: PropTypes.bool,
   requiresPostalCode: PropTypes.bool,
-  requiresAddress: PropTypes.string
+  requiresAddress: PropTypes.bool
 };
 
 export default function connectToState(CreditCardInput) {
@@ -27,7 +27,7 @@ export default function connectToState(CreditCardInput) {
       requiresName: PropTypes.bool,
       requiresCVC: PropTypes.bool,
       requiresPostalCode: PropTypes.bool,
-      requiresAddress: PropTypes.string,
+      requiresAddress: PropTypes.bool,
       validatePostalCode: PropTypes.func,
     };
 
