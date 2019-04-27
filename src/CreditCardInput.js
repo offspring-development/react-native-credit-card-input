@@ -169,6 +169,7 @@ export default class CreditCardInput extends Component {
           scrollEnabled={allowScroll}
           showsHorizontalScrollIndicator={false}
           style={s.form}>
+          <View style={{marginBottom: 20}}>
           <CCInput {...this._inputProps("number")}
             keyboardType="numeric"
             containerStyle={[s.inputContainer, inputContainerStyle, { width: CARD_NUMBER_INPUT_WIDTH }]} />
@@ -190,6 +191,7 @@ export default class CreditCardInput extends Component {
             <CCInput {...this._inputProps("address")}
               keyboardType="default"
               containerStyle={[s.inputContainer, inputContainerStyle, { width: ADDRESS_INPUT_WIDTH }]} /> }
+          </View>
         </ScrollView>
       </View>
     );
