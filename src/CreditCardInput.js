@@ -78,7 +78,7 @@ export default class CreditCardInput extends Component {
     },
     placeholders: {
       name: "Full Name",
-      number: "1234 5678 9101 1112",
+      number: "1234 5678 1234 5678",
       expiry: "MM/YY",
       cvc: "CVC",
       postalCode: "34567",
@@ -161,7 +161,7 @@ export default class CreditCardInput extends Component {
           expiry={expiry}
           cvc={cvc} />
         <ScrollView ref="Form"
-          horizontal
+          vertical
           keyboardShouldPersistTaps="always"
           scrollEnabled={allowScroll}
           showsHorizontalScrollIndicator={false}
