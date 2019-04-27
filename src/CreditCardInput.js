@@ -32,8 +32,8 @@ const s = StyleSheet.create({
     height: 40,
   },
   validateErrorMessage: {
-    marginTop: 5,
-    marginBottom: 0,
+    marginTop: 0,
+    marginBottom: 10,
     textAlign: "left", 
     color: "red", 
     fontSize: 10,
