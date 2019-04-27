@@ -78,7 +78,7 @@ export default class CreditCardInput extends Component {
     },
     placeholders: {
       name: "Full Name",
-      number: "1234 5678 1234 5678",
+      number: "1234 5678 9101 1112",
       expiry: "MM/YY",
       cvc: "CVC",
       postalCode: "34567",
