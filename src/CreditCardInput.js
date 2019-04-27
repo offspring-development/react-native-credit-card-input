@@ -193,7 +193,7 @@ export default class CreditCardInput extends Component {
             {(!valid && 
                 messageInvalid !== undefined && 
                 orderInvalid === 0) ? 
-                (<Text style={[s.validateErrorMessage, {marginTop: 12, marginRight: 10, marginLeft: 10}]}>*{messageInvalid}</Text>) 
+                (<Text style={[s.validateErrorMessage]}>*{messageInvalid}</Text>) 
               : null}
           <CCInput {...this._inputProps("expiry")}
             keyboardType="numeric"
@@ -201,7 +201,7 @@ export default class CreditCardInput extends Component {
             {(!valid && 
                 messageInvalid !== undefined && 
                 orderInvalid === 1) ? 
-                (<Text style={[s.validateErrorMessage, {marginTop: 12, marginRight: 10, marginLeft: 10}]}>*{messageInvalid}</Text>) 
+                (<Text style={[s.validateErrorMessage]}>*{messageInvalid}</Text>) 
               : null}
           { requiresCVC &&
             <CCInput {...this._inputProps("cvc")}
@@ -210,7 +210,7 @@ export default class CreditCardInput extends Component {
               {(!valid && 
                 messageInvalid !== undefined && 
                 orderInvalid === 2) ? 
-                (<Text style={[s.validateErrorMessage, {marginTop: 12, marginRight: 10, marginLeft: 10}]}>*{messageInvalid}</Text>) 
+                (<Text style={[s.validateErrorMessage]}>*{messageInvalid}</Text>) 
               : null}
           { requiresName &&
             <CCInput {...this._inputProps("name")}
@@ -218,7 +218,7 @@ export default class CreditCardInput extends Component {
               {(!valid && 
                 messageInvalid !== undefined && 
                 orderInvalid === 3) ? 
-                (<Text style={[s.validateErrorMessage, {marginTop: 12, marginRight: 10, marginLeft: 10}]}>*{messageInvalid}</Text>) 
+                (<Text style={[s.validateErrorMessage]}>*{messageInvalid}</Text>) 
               : null}
           { requiresPostalCode &&
             <CCInput {...this._inputProps("postalCode")}
@@ -227,7 +227,7 @@ export default class CreditCardInput extends Component {
               {(!valid && 
                 messageInvalid !== undefined && 
                 orderInvalid === 4) ? 
-                (<Text style={[s.validateErrorMessage, {marginTop: 12, marginRight: 10, marginLeft: 10}]}>*{messageInvalid}</Text>) 
+                (<Text style={[s.validateErrorMessage]}>*{messageInvalid}</Text>) 
               : null}
           { requiresAddress &&
             <CCInput {...this._inputProps("address")}
@@ -236,7 +236,7 @@ export default class CreditCardInput extends Component {
               {(!valid && 
                 messageInvalid !== undefined && 
                 orderInvalid === 5) ? 
-                (<Text style={[s.validateErrorMessage, {marginTop: 12, marginRight: 10, marginLeft: 10}]}>*{messageInvalid}</Text>) 
+                (<Text style={[s.validateErrorMessage]}>*{messageInvalid}</Text>) 
               : null}
           </View>
         </ScrollView>
