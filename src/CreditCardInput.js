@@ -92,7 +92,7 @@ export default class CreditCardInput extends Component {
       number: "1234 5678 1234 5678",
       expiry: "MM/YY",
       cvc: "CVC",
-      postalCode: "34567",
+      postalCode: "Postal Code",
       address: "Address"
     },
     inputContainerStyle: {
@@ -222,7 +222,7 @@ export default class CreditCardInput extends Component {
               : null}
           { requiresPostalCode &&
             <CCInput {...this._inputProps("postalCode")}
-              keyboardType="numeric"
+              keyboardType="default"
               containerStyle={[s.inputContainer, inputContainerStyle, { width: POSTAL_CODE_INPUT_WIDTH }]} /> }
               {(!valid && 
                 messageInvalid !== undefined && 

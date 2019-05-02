@@ -28,7 +28,7 @@ export default class CCFieldFormatter {
       expiry: this._formatExpiry(values.expiry),
       cvc: this._formatCVC(values.cvc, card),
       name: removeLeadingSpaces(values.name),
-      postalCode: removeNonNumber(values.postalCode),
+      postalCode: removeLeadingSpaces(values.postalCode),//removeNonNumber(values.postalCode),
       address: removeLeadingSpaces(values.address),
     }, this._displayedFields);
   };
